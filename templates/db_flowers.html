@@ -1,0 +1,81 @@
+{% include "header.html" %}
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Blommor från databasen</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f5f5f5;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ccc;
+            text-align: left;
+        }
+
+        th {
+            background: #e8e8e8;
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 120px;
+            border-radius: 6px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Blommor från databasen</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Namn</th>
+        <!-- <th>Bild</th> -->
+        <th>Beskrivning</th>
+        <th>Ta bort en blomma</th>
+    </tr>
+
+    {% for flower in flowers %}
+    <tr>
+        <td>{{ flower.flowerid }}</td>
+        <td>{{ flower.namn }}</td>
+        <td>{{ flower.beskrivning }}</td>
+        <td>
+        <form action="/remove_one" method="post">
+            <input type="hidden" name="flowerid" value="{{ flower.flowerid }}">
+            <button type="Submit">Ta bort</button>
+        </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<form action="/add_txt" method="post">
+    <button type="Submit">Lägg till från text dokument</button>
+</form>
+
+<form action="remove_all" method="post">
+    <button type="submit">Ta bort alla blommor</button>
+</form>
+
+</body>
+</html>

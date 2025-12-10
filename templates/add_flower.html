@@ -1,0 +1,26 @@
+{% include "header.html" %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Lägg till blomma</title>
+</head>
+<body>
+    <h1>Lägg till ny blomma</h1>
+
+    <form method="POST">
+        <label>ID:</label><br>
+        <input type="text" name="flowerid" required><br><br>
+
+        <label>Namn:</label><br>
+        <input type="text" name="namn" required><br><br>
+
+        <label>Bildlänk:</label><br>
+        <input type="text" name="bildlank"><br><br>
+
+        <label>Beskrivning:</label><br>
+        <textarea name="beskrivning"></textarea><br><br>
+
+        <input type="submit" value="Lägg till">
+    </form>
+</body>
+</html>

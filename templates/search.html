@@ -1,0 +1,31 @@
+{% include "header.html" %}
+<main>
+    <h1>Sök efter specifika bloomor</h1>
+    <form method="get" action="/search">
+        <input type="text" name="query" placeholder="Ange blomnamn">
+        <button type="submit">Sök</button>
+    </form>
+
+    {% if query %}
+        <h2>Sökresultat för "{{ query }}"</h2>
+        <div class="wiki-list">
+            <ul>
+            {% for flower in flowers %}
+                {% if query.lower() in flower.namn.lower() %}
+                <li>
+                    <strong>
+                        <a href="https://en.wikipedia.org/wiki/{{ flower.vetenskapligt_namn | replace(' ', '_') }}"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            {{ flower.namn }}
+                        </a>
+                    </strong>:
+                    {{ flower.vetenskapligt_namn }}
+                </li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</main>
+{% include "footer.html" %}

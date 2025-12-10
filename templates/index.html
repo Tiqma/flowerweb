@@ -1,0 +1,60 @@
+{% include "header.html" %}
+<main>
+<head>
+    <meta charset="UTF-8">
+    <title>Blommors vattningsintervall</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Vattningsintervall för olika blommor</h1>
+    <img src="/plot" alt="Graf över vattningsintervall">
+
+    <h1>Tips till att vattna varje blomma</h1>
+    <div class="watering-tips">
+    <ul>
+        {% for flower in flowers %}
+            <li><strong>{{ flower.namn }}</strong>: Vattna var {{ flower.watering }} dag(ar).</li>
+        {% endfor %}
+    </ul>
+    </div>
+
+    <h1>Wikipedia för varje blomma</h1>
+    <div class="wiki-list">
+    <ul>
+    {% for flower in flowers %}
+        <li>
+            <strong>
+                <a href="https://en.wikipedia.org/wiki/{{ flower.vetenskapligt_namn | replace(' ', '_') }}"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    {{ flower.namn }}
+                </a>
+            </strong>:
+            {{ flower.vetenskapligt_namn }}
+        </li>
+    {% endfor %}
+    </ul>
+    </div>
+
+
+    <h1>Vill blomman ha sol eller skugga?</h1>
+    <div class="wiki-list">
+    <ul>
+    {% for flower in flowers %}
+        <li>
+            <strong>{{ flower.namn }}</strong>:
+        {% if flower.light == "Soligt" %}
+        <span class="icon sun" title="Vill ha sol"></span>
+        {%elif flower.light == "Skugga" %}
+        <span class="icon shade" title="Vill ha skugga"></span>
+        {% else %}
+        <span class="icon unknown" title="Okänd preferens"></span>
+        {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+    </div>
+</main>
+{% include "footer.html" %}
+</body>
+</html>

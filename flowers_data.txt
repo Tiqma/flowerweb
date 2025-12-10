@@ -1,0 +1,12 @@
+
+
+Ros | Rosa | 2 | 200 | Soligt | Behöver mycket ljus och regelbunden vattning.
+Lavendel | Lavandula | 5 | 100 | Soligt | Tål torka, undvik övervattning.
+Aloe Vera | Aloe barbadensis | 10 | 50 | Halvskugga | Succulent, kräver lite vatten.
+Orkidé | Orchidaceae | 7 | 120 | Indirekt ljus | Vattnas försiktigt, gillar fuktig luft.
+Tulpan | Tulipa | 3 | 150 | Soligt | Håll jorden lätt fuktig under blomning.
+Fredskalla | Spathiphyllum | 4 | 180 | Skugga | Tål skugga, vill ha fuktig jord.
+Kaktus | Cactaceae | 14 | 30 | Soligt | Minimalt vatten, låt jorden torka helt.
+Murgröna | Hedera helix | 5 | 120 | Halvskugga | Håll jorden lätt fuktig.
+Pelargon | Pelargonium | 3 | 170 | Soligt | Gillar mycket ljus, undvik stillastående vatten.
+Krysantemum | Chrysanthemum | 2 | 200 | Soligt | Kräver regelbunden vattning under blomning.
