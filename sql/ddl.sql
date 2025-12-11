@@ -59,3 +59,14 @@ BEGIN
     WHERE flowerid = p_flowerid;
 END $$
 DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE show_flower(
+    IN p_namn VARCHAR(45)
+)
+
+BEGIN
+    SELECT * FROM flowers
+    WHERE namn = p_namn;
+END $$
+DELIMITER ;

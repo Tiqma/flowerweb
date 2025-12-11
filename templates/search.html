@@ -1,31 +1,36 @@
 {% include "header.html" %}
-<main>
-    <h1>Sök efter specifika bloomor</h1>
-    <form method="get" action="/search">
-        <input type="text" name="query" placeholder="Ange blomnamn">
-        <button type="submit">Sök</button>
-    </form>
 
-    {% if query %}
-        <h2>Sökresultat för "{{ query }}"</h2>
-        <div class="wiki-list">
-            <ul>
-            {% for flower in flowers %}
-                {% if query.lower() in flower.namn.lower() %}
-                <li>
-                    <strong>
-                        <a href="https://en.wikipedia.org/wiki/{{ flower.vetenskapligt_namn | replace(' ', '_') }}"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            {{ flower.namn }}
-                        </a>
-                    </strong>:
-                    {{ flower.vetenskapligt_namn }}
-                </li>
-                {% endif %}
-            {% endfor %}
-            </ul>
-        </div>
-    {% endif %}
-</main>
+<div class="flower-search-app">
+    <main>
+        <h1>Sök efter specifika blommor</h1>
+
+        <form method="get" action="/search_one">
+            <input type="text" name="flower_name" placeholder="Ange blomnamn" value="{{ query or '' }}">
+            <button type="submit">Sök</button>
+        </form>
+
+        {% if flower_data %}
+            <h2>Sökresultat för "{{ query }}"</h2>
+
+            <div class="flower-results">
+                <ul>
+                    {% for flower in flower_data %}
+                        <li class="flower-item">
+                            <strong>{{ flower.namn }}</strong><br>
+
+                            {% if flower.bildlank %}
+                                <img src="{{ flower.bildlank }}" alt="{{ flower.namn }}">
+                            {% endif %}
+
+                            <p>{{ flower.beskrivning }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+        {% elif query %}
+            <p class="no-results">Inga blommor hittades för "{{ query }}".</p>
+        {% endif %}
+    </main>
+</div>
 {% include "footer.html" %}

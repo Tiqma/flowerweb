@@ -10,3 +10,4 @@ Kaktus | Cactaceae | 14 | 30 | Soligt | Minimalt vatten, låt jorden torka helt.
 Murgröna | Hedera helix | 5 | 120 | Halvskugga | Håll jorden lätt fuktig.
 Pelargon | Pelargonium | 3 | 170 | Soligt | Gillar mycket ljus, undvik stillastående vatten.
 Krysantemum | Chrysanthemum | 2 | 200 | Soligt | Kräver regelbunden vattning under blomning.
+Vitsippa | Vit | 1 | 50 | Halvskugga | Trivs i fuktig skogsmark och kräver lätt vattning.

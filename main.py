@@ -1,5 +1,5 @@
 from focus import read_flowers_data, plot_watering_intervals, add_flowers_from_txt_to_database
-from flowers.flowers import add_flower, remove_all, remove_one
+from flowers.flowers import add_flower, remove_all, remove_one, show_one
 from flask import Flask, render_template, send_from_directory, request, redirect, url_for, send_from_directory
 from db import get_connection
 import os
@@ -19,6 +19,16 @@ def plot_image():
 @app.route('/search')
 def search():
     return render_template('search.html')
+
+@app.route('/search_one')
+def search_one():
+    query = request.args.get("flower_name")
+
+    flower_data = None
+    if query:
+        flower_data = show_one(query)
+
+    return render_template("search.html", query=query, flower_data=flower_data)
 
 @app.route('/dbflowers')
 def db_flowers():
@@ -54,10 +64,10 @@ def remove_all_flowers():
 @app.route('/remove_one', methods=['POST'])
 def remove_one_flower():
     flower_id_to_remove = request.form.get('flowerid')
-    
+
     if flower_id_to_remove:
         remove_one(flower_id_to_remove)
-    
+
     return redirect(url_for('db_flowers'))
 
 @app.route('/add', methods=['GET', 'POST'])

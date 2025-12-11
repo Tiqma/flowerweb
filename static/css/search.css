@@ -1,0 +1,129 @@
+/* Scope everything under .flower-search-app */
+.flower-search-app {
+    font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+    background: #f7f7f9;
+    color: #333;
+    padding: 20px;
+}
+
+/* Center content */
+.flower-search-app main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Headings */
+.flower-search-app h1,
+.flower-search-app h2 {
+    text-align: center;
+    font-weight: 600;
+    color: #2a2a2a;
+}
+
+/* Form styling */
+.flower-search-app form {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.flower-search-app form input[type="text"] {
+    padding: 12px 16px;
+    width: 60%;
+    max-width: 350px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.flower-search-app form input[type="text"]:focus {
+    border-color: #6a9afc;
+    box-shadow: 0 0 8px rgba(110, 156, 255, 0.3);
+    outline: none;
+}
+
+.flower-search-app form button {
+    padding: 12px 20px;
+    margin-left: 10px;
+    background: #6a9afc;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s ease;
+}
+
+.flower-search-app form button:hover {
+    background: #517fed;
+}
+
+/* Results list */
+.flower-search-app .flower-results ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.flower-search-app .flower-item {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    transition: 0.2s ease-in-out;
+}
+
+.flower-search-app .flower-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+/* Text inside each item */
+.flower-search-app .flower-item strong {
+    font-size: 20px;
+    color: #1a1a1a;
+}
+
+.flower-search-app .flower-item img {
+    display: block;
+    margin-top: 12px;
+    border-radius: 10px;
+    max-width: 200px;
+    height: auto;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.flower-search-app .flower-item p {
+    margin-top: 12px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* No results */
+.flower-search-app .no-results {
+    text-align: center;
+    margin-top: 40px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .flower-search-app form input[type="text"] {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .flower-search-app form button {
+        width: 90%;
+    }
+
+    .flower-search-app .flower-item {
+        padding: 15px;
+    }
+
+    .flower-search-app .flower-item img {
+        max-width: 100%;
+    }
+}

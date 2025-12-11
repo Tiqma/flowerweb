@@ -1,3 +1,6 @@
+@import "tabell.css";
+@import "search.css";
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;

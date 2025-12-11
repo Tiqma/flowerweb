@@ -29,7 +29,6 @@ def add_flowers_from_txt_to_database():
     
     return
 
-add_flowers_from_txt_to_database()
 
 # Funktion för att plotta vattningsintervaller
 def plot_watering_intervals(flowers):
