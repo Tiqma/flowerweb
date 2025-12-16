@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Lägg till blomma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
 </head>
 <body>
-    <h1>Lägg till ny blomma</h1>
-
-    <form method="POST">
+    
+    <form method="POST" class="form">
+        <h1>Lägg till ny blomma</h1>
         <label>ID:</label><br>
         <input type="text" name="flowerid" required><br><br>
 
